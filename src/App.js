@@ -1,9 +1,6 @@
-import React, {Component} from 'react';
-import {BrowserRouter, Route} from 'react-router-dom'
+import React, { Component } from 'react';
 import * as BooksAPI from './BooksAPI';
-import ShelfComponent from './components/ShelfComponent';
-import LibraryComponent from './components/LibraryComponent';
-import SearchComponent from './components/SearchComponent';
+import ShelfComponent from './ShelfComponent';
 
 class App extends Component {
   state = {
@@ -34,20 +31,19 @@ class App extends Component {
   }
   render() {
     return (
-      <BrowserRouter>
-        <div>
-          <Route exact path="/" render={() => (
-            <LibraryComponent
-              books={this.state.books}
-              moveToShelf={(book, shelf) => this.moveToShelf(book, shelf)} />
-          )} />
-          <Route exact path="/search" render={() => (
-            <SearchComponent
-              booksAlreadyOnShelf={this.state.books}
-              moveToShelf={(book, shelf) => this.moveToShelf(book, shelf)} />
-          )} />
-        </div>
-      </BrowserRouter>
+      <div>
+      <header>MyReads</header>
+        <ShelfComponent 
+        title= "Currently Reading" 
+        books= {this.state.books.filter(book=>book.shelf==="currentlyReading")}
+        moveToShelf={(book, shelf) => this.moveToShelf(book, shelf)} /> 
+        <ShelfComponent title= "Want to Read" 
+        books= {this.state.books.filter(book=>book.shelf==="wantToRead")}
+        moveToShelf={(book, shelf) => this.moveToShelf(book, shelf)}/> 
+        <ShelfComponent title= "Read" 
+        books= {this.state.books.filter(book=>book.shelf==="read")}
+        moveToShelf={(book, shelf) => this.moveToShelf(book, shelf)}/> 
+      </div>
     );
   }
 }
