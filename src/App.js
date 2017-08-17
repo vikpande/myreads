@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import {BrowserRouter, Route} from 'react-router-dom';
+import {Switch, Route} from 'react-router-dom';
 import LibraryComponent from './LibraryComponent';
 import SearchComponent from './SearchComponent';
-import * as BooksAPI from './BooksAPI';
 import ShelfComponent from './ShelfComponent';
+import PageNotFoundComponent from './PageNotFoundComponent';
+import * as BooksAPI from './BooksAPI';
 
 class App extends Component {
   state = {
@@ -15,8 +16,10 @@ class App extends Component {
   moveToShelf(book, shelf) {
     BooksAPI.update(book, shelf).then(res =>
       this.setState((prevState) => {
-        let { currentlyReading, wantToRead, read } = res;
+        let {currentlyReading, wantToRead, read} = res;
         let prevBooks = prevState.books;
+        if (prevBooks.find(prevBook => prevBook.id === book.id) === undefined) {prevBooks.push(book);
+        }
         prevBooks.forEach(prevBook => {
           if (currentlyReading.find(bid => bid === prevBook.id) !== undefined) {
             prevBook.shelf = 'currentlyReading';
@@ -27,27 +30,30 @@ class App extends Component {
           if (read.find(bid => bid === prevBook.id) !== undefined) {
             prevBook.shelf = 'read';
           }
+          else {prevBooks.shelf = 'none';
+        }
+
         });
-        return { books: prevBooks };
-      })
+        return {books: prevBooks};
+        }
+      )
     );
   }
   render() {
     return (
-      <BrowserRouter>
-        <div>
-          <Route exact path="/" render={() => (
-            <LibraryComponent
-              books={this.state.books}
-              moveToShelf={(book, shelf) => this.moveToShelf(book, shelf)} />
-          )} />
-          <Route exact path="/search" render={() => (
-            <SearchComponent
-              booksAlreadyOnShelf={this.state.books}
-              moveToShelf={(book, shelf) => this.moveToShelf(book, shelf)} />
-          )} />
-        </div>
-      </BrowserRouter>
+      <Switch>
+        <Route exact path="/" render={() => (
+          <LibraryComponent
+            books={this.state.books}
+            moveToShelf={(book, shelf) => this.moveToShelf(book, shelf)} />
+        )} />
+        <Route exact path="/search" render={() => (
+          <SearchComponent
+            booksAlreadyOnShelf={this.state.books}
+            moveToShelf={(book, shelf) => this.moveToShelf(book, shelf)} />
+        )} />
+        <Route component={PageNotFoundComponent} />
+      </Switch>
     );
   }
 }

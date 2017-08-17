@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import escapeRegExp from 'escape-string-regexp';
-
-import * as BooksAPI from './BooksAPI';
 import ShelfComponent from './ShelfComponent';
+import * as BooksAPI from './BooksAPI';
+
 
 class SearchComponent extends Component {
 
@@ -46,7 +46,12 @@ class SearchComponent extends Component {
     let searchTermsToQuery = [];
     if (query) {
       const match = new RegExp(`^${escapeRegExp(query)}`, 'i');
-      searchTermsToQuery = this.searchTerms.filter(st => match.test(st));
+      this.searchTerms.forEach(st => {
+        if (match.test(st)) {
+          searchTermsToQuery.push(st);
+        }
+      })
+      
     } else {
       searchTermsToQuery = [];
     }
