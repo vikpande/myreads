@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import BookComponent from './Book';
 import PropTypes from 'prop-types';
 
