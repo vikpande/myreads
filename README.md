@@ -67,7 +67,7 @@ Open your package.json and add a homepage field:
 
 Step 2: Install gh-pages and add deploy to scripts in package.json
 
-To publish it at https://myusername.github.io/my-app, run:
+To publish it at https://myusername.github.io/my-app/#/, run:
 
 * "yarn add gh-pages" or "npm install --save gh-pages"
 
