@@ -14,8 +14,10 @@ class ShelfComponent extends Component {
         return (
             <div>
             <h3> {title}</h3>
+            <div className = "shelf-books">
                 {books.map(book=>(<BookComponent key ={book.id}  book= {book} moveToShelf={moveToShelf} /> 
                 ))}
+            </div>
             </div>
         )
     }
