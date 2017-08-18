@@ -2,7 +2,7 @@
   "name": "myreads",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://vikpande.github.io/myreads",
+  "homepage": "https://vikpande.github.io/myreads/#/",
   "dependencies": {
     "gh-pages": "^1.0.0",
     "prop-types": "^15.5.10",

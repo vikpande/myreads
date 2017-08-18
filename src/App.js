@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {Switch, Route} from 'react-router-dom';
 import LibraryComponent from './LibraryComponent';
 import SearchComponent from './SearchComponent';
-import ShelfComponent from './ShelfComponent';
 import PageNotFoundComponent from './PageNotFoundComponent';
 import * as BooksAPI from './BooksAPI';
 
