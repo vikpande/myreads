@@ -63,7 +63,11 @@ Step 1: Add homepage to package.json . The step below is important!
 
 Open your package.json and add a homepage field:
 
+<<<<<<< refs/remotes/origin/master
   "homepage": "https://myusername.github.io/my-app",
+=======
+  "homepage": "https://vikpande.github.io/myreads/#/",
+>>>>>>> updating Readme for " improved" developer experience
 
 Step 2: Install gh-pages and add deploy to scripts in package.json
 
