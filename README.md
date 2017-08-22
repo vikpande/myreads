@@ -19,21 +19,38 @@ The users can also perform these tasks:
 The project is bootstrapped with Create React App (https://github.com/facebookincubator/create-react-app)
 
 To run the web app; follow the below steps and in the order requested below:
-* clone the Project - git clone https://github.com/vikpande/myreads.git/  
-* install the dependencies - "yarn" or do an "npm install" { if you got sometime to grab a coffee ;-) }
+
+* clone the Project 
+
+```
+git clone https://github.com/vikpande/myreads.git/  
+```
+* Use your terminal and run the following command to install the dependencies using yarn or npm { use npm if you got sometime to grab a coffee ;-) }
+
+```
+"yarn" or do an "npm install" 
+```
 
 Development environment (localhost)
 
-* do a "yarn start" or "npm start" on your terminal 
-* do a "yarn start" or "npm start" on your terminal  
+* At this moment run the follwing on your terminal :
+
+```
+"yarn start" or "npm start" 
+```
 
 Once you run this command, you can view the web application at the following location 
+
  - http://localhost:3000 
 
 Any edit to the codebase will re-laod the page automatically ( hot reload ; if you will) 
 If there are any lint errors, you will be prompted in the console and also in your terminal
 
-* Do a "yarn build" pr "npm run build" on your terminal 
+* Now run the folowing command on your terminal to pull all your build dependencies:
+
+```
+"yarn build" pr "npm run build"
+```
 
 The above command "builds the app" for production and saves it in the build folder locally.
 The command also bundles React in production mode and optimizes the build for a good performance.
@@ -45,7 +62,11 @@ You can now go to the deployment step and skip the following "yarn eject" comman
 
 WARNING: Before you run the next command on your terminal, please read the instructions:
 
-*  "yarn eject" or "npm run eject"
+* `run the following on yoru terminal to eject:
+
+```
+"yarn eject" or "npm run eject"
+```
 
 Instructions :
 
@@ -67,9 +88,11 @@ Open your package.json and add a homepage field:
 
 Step 2: Install gh-pages and add deploy to scripts in package.json
 
-To publish it at https://myusername.github.io/my-app/#/, run:
+To publish it at https://myusername.github.io/my-app/#/, on your terminal run:
 
-* "yarn add gh-pages" or "npm install --save gh-pages"
+```
+"yarn add gh-pages" or "npm install --save gh-pages"
+```
 
 Add the following scripts in your package.json:
 
@@ -79,11 +102,15 @@ Add the following scripts in your package.json:
 
 at this moment run the below command to install depdencies: 
 
-* "yarn " or "npm install "
+```
+"yarn " or "npm install "
+```
 
 Step 3: Deploy the site by running :
 
-* "yarn deploy" or "npm run deploy"
+```
+"yarn deploy" or "npm run deploy"
+```
 
 Step 4: Ensure your project’s settings use gh-pages
 
@@ -92,7 +119,13 @@ Finally, make sure GitHub Pages option in your GitHub project settings is set to
 
 ## Contributing
 
-No brainer here . Please create a " pull request" with your proposed / suggested changes and its benefits over the existing fucntionality. 
+No brainer here. Follow the below good practice:
+
+* Fork the repo on GitHub
+* Clone the project to your own machine
+* Commit changes to your own branch
+* Push your work back up to your fork
+*  Submit your " pull request" with  proposed changes and its benefits over the existing functionality. 
 
 
 ## Acknowledgments

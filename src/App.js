@@ -23,10 +23,10 @@ class App extends Component {
           if (currentlyReading.find(bid => bid === prevBook.id) !== undefined) {
             prevBook.shelf = 'currentlyReading';
           }
-          if (wantToRead.find(bid => bid === prevBook.id) !== undefined) {
+          else if (wantToRead.find(bid => bid === prevBook.id) !== undefined) {
             prevBook.shelf = 'wantToRead';
           }
-          if (read.find(bid => bid === prevBook.id) !== undefined) {
+          else if (read.find(bid => bid === prevBook.id) !== undefined) {
             prevBook.shelf = 'read';
           }
           else {prevBooks.shelf = 'none';
