@@ -49,20 +49,20 @@ If there are any lint errors, you will be prompted in the console and also in yo
 * Now run the folowing command on your terminal to pull all your build dependencies:
 
 ```
-"yarn build" pr "npm run build"
+"yarn build" or "npm run build"
 ```
 
 The above command "builds the app" for production and saves it in the build folder locally.
 The command also bundles React in production mode and optimizes the build for a good performance.
 The build is minified and the filenames include the hashes.
 
-Voila ! Your app is now ready to be deployed!. 
+VOILA !! Your app is now ready to be deployed!. 
 
 You can now go to the deployment step and skip the following "yarn eject" command.But it might be worth a read to know why its in there. 
 
 WARNING: Before you run the next command on your terminal, please read the instructions:
 
-* `run the following on yoru terminal to eject:
+* Run the following on your terminal to eject:
 
 ```
 "yarn eject" or "npm run eject"
@@ -70,9 +70,7 @@ WARNING: Before you run the next command on your terminal, please read the instr
 
 Instructions :
 
-You don’t have to ever use the above command unless you are curious to create your own configuration files and dependencies.
-
-What happens when you run the abve command ?
+You don’t have to ever use the above command unless you are curious to create your own configuration files and dependencies. So, what happens when you run the abve command ?
 
 Once you run the above "yarn eject" or "npm run eject", it removes the build dependencies from your project. You are then in control of your scripts and create your own custom set up at any time. Run this command if you are not satisfied with the configuration files and the dependencies (Webpack, Babel, ESLint, etc) and want to over write them. If you are not too curious about the dependencies and configuration files and want 
  
